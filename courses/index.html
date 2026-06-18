@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>معالم التحقيق — الدروس</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Noto+Naskh+Arabic:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="nav-wrap">
+    <a class="logo" href="index.html">
+      <div class="brand-mark">م</div>
+      <div>
+        <div class="site-name">معالم التحقيق</div>
+        <div class="site-sub">منصة علمية باقية</div>
+      </div>
+    </a>
+    <nav>
+      <a href="..//home page/index.html">الرئيسية</a>
+      <a href="../courses/index.html" class="active">الدروس</a>
+      <a href="../responses/index.html">ردود علمية</a>
+      <a href="../searchs/index.html">بحوث علمية</a>
+      <a href="..//the doors/index.html">أبواب العلم</a>
+    </nav>
+    <button class="menu-toggle" id="menuToggleBtn" aria-label="القائمة">☰</button>
+  </div>
+  <div id="mobileNav" role="navigation" aria-label="التنقل المحمول" style="display:none;border-top:1px solid var(--border);background:var(--white)"></div>
+    <div style="max-width:1140px;margin:0 auto;padding:.6rem 1.5rem;display:flex;flex-direction:column;gap:.3rem">
+      <a href="..//home page/index.html" style="padding:.55rem .7rem;border-radius:8px;color:var(--text-soft);font-weight:600">الرئيسية</a>
+      <a href="../courses/index.html" style="padding:.55rem .7rem;border-radius:8px;color:var(--blue-mid);font-weight:600;background:var(--blue-faint)">الدروس</a>
+      <a href="../responses/index.html" style="padding:.55rem .7rem;border-radius:8px;color:var(--text-soft);font-weight:600">ردود علمية</a>
+      <a href="../searchs/index.html" style="padding:.55rem .7rem;border-radius:8px;color:var(--text-soft);font-weight:600">بحوث علمية</a>
+      <a href="..//the doors/index.html" style="padding:.55rem .7rem;border-radius:8px;color:var(--text-soft);font-weight:600">أبواب العلم</a>
+    </div>
+  </div>
+  </div>
+</header>
+
+<div class="page-hero">
+  <h1>الدروس العلمية</h1>
+  <p>دروس محققة، وشيوخ معتمدون، ومراجع موثّقة — كل ما تحتاجه في مكان واحد</p>
+</div>
+
+<div class="tabs-bar">
+  <div class="tabs-inner">
+    <button class="tab-btn active" data-tab="shuyukh">
+      📡 دروس الشيوخ <span class="badge">٠</span>
+    </button>
+    <button class="tab-btn" data-tab="marajie">
+      📚 الكتب والمراجع <span class="badge">٠</span>
+    </button>
+  </div>
+</div>
+
+<div class="page-body">
+
+  <!-- دروس الشيوخ (مفعل افتراضياً) -->
+  <div id="tab-shuyukh" class="tab-content section-block">
+    <div class="sec-head">
+      <div>
+        <h2>دروس الشيوخ</h2>
+        <p>محتوى مختار ننشره من شيوخ ثقات — لا يمثّل بالضرورة رأي الموقع في كل مسألة</p>
+      </div>
+    </div>
+
+    <div class="external-grid">
+      <div class="ext-card">
+        <div class="ext-thumb">
+          📖
+          <span class="ext-source-badge">يوتيوب</span>
+        </div>
+        <div class="ext-body">
+          <div class="ext-sheikh">
+            <div class="ext-sheikh-dot">ش</div>
+            <span class="ext-sheikh-name">الشيخ — سيُضاف الاسم</span>
+          </div>
+          <div class="ext-title">عنوان الدرس — سيُضاف لاحقاً</div>
+          <div class="ext-desc">وصف مختصر للدرس وموضوعه سيُكتب عند إضافة المحتوى الفعلي.</div>
+          <div class="ext-footer">
+            <div class="ext-meta">
+              <span>📚 — جلسة</span>
+              <span>🕐 —</span>
+            </div>
+            <a href="#" class="ext-link">مشاهدة ←</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="ext-card">
+        <div class="ext-thumb" style="background:linear-gradient(135deg,#102a50,#1e6dbf)">
+          🌙
+          <span class="ext-source-badge">تيليغرام</span>
+        </div>
+        <div class="ext-body">
+          <div class="ext-sheikh">
+            <div class="ext-sheikh-dot">ش</div>
+            <span class="ext-sheikh-name">الشيخ — سيُضاف الاسم</span>
+          </div>
+          <div class="ext-title">عنوان الدرس — سيُضاف لاحقاً</div>
+          <div class="ext-desc">وصف مختصر للدرس وموضوعه سيُكتب عند إضافة المحتوى الفعلي.</div>
+          <div class="ext-footer">
+            <div class="ext-meta">
+              <span>📚 — جلسة</span>
+              <span>🕐 —</span>
+            </div>
+            <a href="#" class="ext-link">مشاهدة ←</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="ext-card">
+        <div class="ext-thumb" style="background:linear-gradient(135deg,#071a30,#154070)">
+          ⚖️
+          <span class="ext-source-badge">ساوند كلاود</span>
+        </div>
+        <div class="ext-body">
+          <div class="ext-sheikh">
+            <div class="ext-sheikh-dot">ش</div>
+            <span class="ext-sheikh-name">الشيخ — سيُضاف الاسم</span>
+          </div>
+          <div class="ext-title">عنوان الدرس — سيُضاف لاحقاً</div>
+          <div class="ext-desc">وصف مختصر للدرس وموضوعه سيُكتب عند إضافة المحتوى الفعلي.</div>
+          <div class="ext-footer">
+            <div class="ext-meta">
+              <span>📚 — جلسة</span>
+              <span>🕐 —</span>
+            </div>
+            <a href="#" class="ext-link">استماع ←</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- الكتب والمراجع -->
+  <div id="tab-marajie" class="tab-content section-block" style="display:none">
+    <div class="sec-head">
+      <div>
+        <h2>المراجع والكتب</h2>
+        <p>الكتب والمصادر العلمية التي يعتمدها الموقع في دروسه ومقالاته</p>
+      </div>
+    </div>
+
+    <div class="books-grid">
+      <div class="book-card">
+        <div class="book-cover c1">
+          <div class="book-spine"></div>
+          <div class="book-icon">📘</div>
+          <div class="book-title-cover">عنوان الكتاب</div>
+        </div>
+        <div class="book-body">
+          <div class="book-title">عنوان الكتاب — سيُضاف</div>
+          <div class="book-author">المؤلف — سيُضاف</div>
+          <div class="book-tags">
+            <span class="book-tag">العقيدة</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="book-card">
+        <div class="book-cover c2">
+          <div class="book-spine"></div>
+          <div class="book-icon">📗</div>
+          <div class="book-title-cover">عنوان الكتاب</div>
+        </div>
+        <div class="book-body">
+          <div class="book-title">عنوان الكتاب — سيُضاف</div>
+          <div class="book-author">المؤلف — سيُضاف</div>
+          <div class="book-tags">
+            <span class="book-tag">الحديث</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="book-card">
+        <div class="book-cover c3">
+          <div class="book-spine"></div>
+          <div class="book-icon">📙</div>
+          <div class="book-title-cover">عنوان الكتاب</div>
+        </div>
+        <div class="book-body">
+          <div class="book-title">عنوان الكتاب — سيُضاف</div>
+          <div class="book-author">المؤلف — سيُضاف</div>
+          <div class="book-tags">
+            <span class="book-tag">الفقه</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="book-card">
+        <div class="book-cover c4">
+          <div class="book-spine"></div>
+          <div class="book-icon">📕</div>
+          <div class="book-title-cover">عنوان الكتاب</div>
+        </div>
+        <div class="book-body">
+          <div class="book-title">عنوان الكتاب — سيُضاف</div>
+          <div class="book-author">المؤلف — سيُضاف</div>
+          <div class="book-tags">
+            <span class="book-tag">التفسير</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="book-card">
+        <div class="book-cover c5">
+          <div class="book-spine"></div>
+          <div class="book-icon">📒</div>
+          <div class="book-title-cover">عنوان الكتاب</div>
+        </div>
+        <div class="book-body">
+          <div class="book-title">عنوان الكتاب — سيُضاف</div>
+          <div class="book-author">المؤلف — سيُضاف</div>
+          <div class="book-tags">
+            <span class="book-tag">أصول الفقه</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="book-card">
+        <div class="book-cover c6">
+          <div class="book-spine"></div>
+          <div class="book-icon">📓</div>
+          <div class="book-title-cover">عنوان الكتاب</div>
+        </div>
+        <div class="book-body">
+          <div class="book-title">عنوان الكتاب — سيُضاف</div>
+          <div class="book-author">المؤلف — سيُضاف</div>
+          <div class="book-tags">
+            <span class="book-tag">السيرة</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div><footer>
+  <div class="footer-inner">
+    <div class="footer-links">
+      <a href="#">من نحن</a>
+      <a href="#">سياسة الخصوصية</a>
+      <a href="#">اتصل بنا</a>
+    </div>
+    <div class="copyright">&copy; 2026 معالم التحقيق — جميع الحقوق محفوظة</div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

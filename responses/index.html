@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>معالم التحقيق — الردود العلمية</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Noto+Naskh+Arabic:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="nav-wrap">
+    <a class="logo" href="index.html">
+      <div class="brand-mark">م</div>
+      <div>
+        <div class="site-name">معالم التحقيق</div>
+        <div class="site-sub">منصة علمية باقية</div>
+      </div>
+    </a>
+    <nav>
+      <a href="..//home page/index.html">الرئيسية</a>
+      <a href="..//courses/index.html">الدروس</a>
+      <a href="..//searchs/index.html">البحوث العلمية</a>
+      <a href="index.html" class="active">الردود العلمية</a>
+      <a href="..//the doors/index.html">أبواب العلم</a>
+    </nav>
+    <button class="menu-toggle" onclick="toggleMenu(this)" aria-label="القائمة">☰</button>
+  </div>
+  <div id="mobileNav" style="display:none;border-top:1px solid var(--border);background:var(--white)">
+    <div style="max-width:1140px;margin:0 auto;padding:.6rem 1.5rem;display:flex;flex-direction:column;gap:.3rem">
+      <a href="../home page/index.html" style="padding:.55rem .7rem;border-radius:8px;color:var(--text-soft);font-weight:600">الرئيسية</a>
+      <a href="../courses/index.html" style="padding:.55rem .7rem;border-radius:8px;color:var(--text-soft);font-weight:600">الدروس</a>
+      <a href="../searchs/index.html" style="padding:.55rem .7rem;border-radius:8px;color:var(--text-soft);font-weight:600">البحوث العلمية</a>
+      <a href="index.html" style="padding:.55rem .7rem;border-radius:8px;color:var(--blue-mid);background:var(--blue-faint);font-weight:600">الردود العلمية</a>
+      <a href="../the doors/index.html" style="padding:.55rem .7rem;border-radius:8px;color:var(--text-soft);font-weight:600">أبواب العلم</a>
+    </div>
+  </div>
+</header>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <h1>الردود العلمية</h1>
+  <p>ردود على أسئلة المتابعين من قبل محققي الموقع والشيوخ المتعاونين معنا</p>
+</div>
+
+<!-- TAB BAR -->
+<div class="tabs-bar">
+  <div class="tabs-inner">
+    <button class="tab-btn active" onclick="showTab('all',this)">
+      📋 جميع الردود <span class="badge" id="badge-all">٠</span>
+    </button>
+    <button class="tab-btn" onclick="showTab('questions',this)">
+      ❓ أسئلة المتابعين <span class="badge" id="badge-questions">٠</span>
+    </button>
+  </div>
+</div>
+
+<!-- FILTERS BAR -->
+<div class="filters-bar">
+  <div class="filters-inner">
+    <span style="font-size:.82rem;font-weight:600;color:var(--text-soft);flex-shrink:0">التصنيف:</span>
+    <button class="filter-chip on" onclick="filterChip(this,'الكل')">الكل</button>
+    <button class="filter-chip" onclick="filterChip(this,'العقيدة')">العقيدة</button>
+    <button class="filter-chip" onclick="filterChip(this,'الفقه')">الفقه</button>
+    <button class="filter-chip" onclick="filterChip(this,'الحديث')">الحديث</button>
+    <button class="filter-chip" onclick="filterChip(this,'القرآن')">القرآن</button>
+    <button class="filter-chip" onclick="filterChip(this,'الأخلاق')">الأخلاق</button>
+    <div class="search-wrap">
+      <input type="text" placeholder="ابحث في الردود...">
+    </div>
+  </div>
+</div>
+
+<!-- PAGE BODY -->
+<div class="page-body">
+
+  <!-- FEATURED REPLY -->
+  <div class="featured-banner">
+    <div>
+      <span class="feat-badge">✦ رد مميز</span>
+      <div class="feat-title">السؤال: عنوان السؤال — سيُضاف لاحقاً</div>
+      <div class="feat-researcher">
+        <div class="feat-avatar">م</div>
+        <span class="feat-researcher-name">اسم الرادّ — سيُضاف</span>
+      </div>
+      <div class="feat-desc">ملخص مختصر للرد والإجابة على السؤال المطروح سيُكتب عند إضافة المحتوى الفعلي للموقع.</div>
+      <div class="feat-meta">
+        <span class="feat-tag">📂 العقيدة</span>
+        <span class="feat-tag">📅 —</span>
+      </div>
+    </div>
+    <div class="feat-cta">
+      <button class="feat-btn">قراءة الرد ←</button>
+    </div>
+  </div>
+
+  <!-- ══ TAB: الكل / أسئلة المتابعين ══ -->
+
+  <!-- جميع الردود -->
+  <div id="tab-all" class="tab-content section-block">
+    <div class="sec-head">
+      <div>
+        <h2>جميع الردود</h2>
+        <p>ردود على أسئلة المتابعين والمهتمين</p>
+      </div>
+      <div style="display:flex;align-items:center;gap:.8rem">
+        <div class="view-toggle">
+          <button class="vt-btn on" id="vt-grid" onclick="setView('grid')" title="عرض شبكي">⊞</button>
+          <button class="vt-btn" id="vt-list" onclick="setView('list')" title="عرض قائمة">≡</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- GRID VIEW -->
+    <div id="view-grid" class="reply-grid">
+
+      <!-- بطاقة ردّ ١ -->
+      <div class="reply-card">
+        <div class="rc-header">
+          <div class="rc-type-icon">❓</div>
+          <div class="rc-meta-top">
+            <div class="rc-category">الفقه</div>
+            <span class="rc-source-badge">✓ إجابة موثقة</span>
+          </div>
+        </div>
+        <div class="rc-body">
+          <div class="rc-question">السؤال: عنوان السؤال — سيُضاف لاحقاً</div>
+          <div class="rc-abstract">ملخص مختصر للرد والإجابة على السؤال سيُكتب عند إضافة المحتوى الفعلي.</div>
+          <div class="rc-researcher">
+            <div class="rc-avatar">م</div>
+            <div class="rc-researcher-info">
+              <div class="rc-researcher-name">الرادّ — سيُضاف</div>
+              <div class="rc-researcher-role">محقق الموقع</div>
+            </div>
+          </div>
+          <div class="rc-footer">
+            <div class="rc-tags"><span class="rc-tag">الفقه</span></div>
+            <a href="#" class="rc-link">قراءة ←</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- بطاقة ردّ ٢ -->
+      <div class="reply-card">
+        <div class="rc-header">
+          <div class="rc-type-icon">❓</div>
+          <div class="rc-meta-top">
+            <div class="rc-category">العقيدة</div>
+            <span class="rc-source-badge">✓ إجابة موثقة</span>
+          </div>
+        </div>
+        <div class="rc-body">
+          <div class="rc-question">السؤال: عنوان السؤال — سيُضاف لاحقاً</div>
+          <div class="rc-abstract">ملخص مختصر للرد والإجابة على السؤال سيُكتب عند إضافة المحتوى الفعلي.</div>
+          <div class="rc-researcher">
+            <div class="rc-avatar">ش</div>
+            <div class="rc-researcher-info">
+              <div class="rc-researcher-name">الشيخ — سيُضاف</div>
+              <div class="rc-researcher-role">شيخ متعاون</div>
+            </div>
+          </div>
+          <div class="rc-footer">
+            <div class="rc-tags"><span class="rc-tag">العقيدة</span></div>
+            <a href="#" class="rc-link">قراءة ←</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- بطاقة ردّ ٣ -->
+      <div class="reply-card">
+        <div class="rc-header">
+          <div class="rc-type-icon">❓</div>
+          <div class="rc-meta-top">
+            <div class="rc-category">الحديث</div>
+            <span class="rc-source-badge">✓ إجابة موثقة</span>
+          </div>
+        </div>
+        <div class="rc-body">
+          <div class="rc-question">السؤال: عنوان السؤال — سيُضاف لاحقاً</div>
+          <div class="rc-abstract">ملخص مختصر للرد والإجابة على السؤال سيُكتب عند إضافة المحتوى الفعلي.</div>
+          <div class="rc-researcher">
+            <div class="rc-avatar">م</div>
+            <div class="rc-researcher-info">
+              <div class="rc-researcher-name">الرادّ — سيُضاف</div>
+              <div class="rc-researcher-role">محقق الموقع</div>
+            </div>
+          </div>
+          <div class="rc-footer">
+            <div class="rc-tags"><span class="rc-tag">الحديث</span></div>
+            <a href="#" class="rc-link">قراءة ←</a>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /reply-grid -->
+
+    <!-- LIST VIEW (hidden by default) -->
+    <div id="view-list" class="reply-list" style="display:none">
+      <!-- عناصر القائمة -->
+    </div>
+
+  </div><!-- /tab-all -->
+
+  <!-- أسئلة المتابعين -->
+  <div id="tab-questions" class="tab-content section-block" style="display:none">
+    <div class="sec-head">
+      <div>
+        <h2>أسئلة المتابعين</h2>
+        <p>أسئلة من متابعي الموقع وردود محققينا عليها</p>
+      </div>
+    </div>
+    <div class="reply-grid">
+      <!-- بطاقات ردود -->
+    </div>
+  </div>
+
+</div><!-- /page-body -->
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-links">
+      <a href="#">من نحن</a>
+      <a href="#">سياسة الخصوصية</a>
+      <a href="#">اتصل بنا</a>
+    </div>
+    <div class="copyright">&copy; 2026 معالم التحقيق — جميع الحقوق محفوظة</div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

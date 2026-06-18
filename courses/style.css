@@ -1,0 +1,555 @@
+:root {
+  --blue-dark:   #0a2342;
+  --blue-mid:    #1e6dbf;
+  --blue-light:  #4a9ade;
+  --blue-pale:   #d6e9f8;
+  --blue-faint:  #f0f7fd;
+  --white:       #ffffff;
+  --text:        #0a2342;
+  --text-soft:   rgba(10,35,66,.6);
+  --border:      rgba(10,35,66,.07);
+  --radius:      14px;
+  --shadow-sm:   0 2px 10px rgba(10,35,66,.06);
+  --shadow-md:   0 8px 28px rgba(10,35,66,.09);
+}
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:'Noto Naskh Arabic',serif;
+  background:var(--white);
+  color:var(--text);
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+
+a{
+  text-decoration:none;
+  color:inherit;
+}
+
+/* ══ HEADER ══ */
+header{
+  position:sticky;
+  top:0;
+  z-index:200;
+  background:rgba(255,255,255,.96);
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--border);
+  box-shadow:var(--shadow-sm);
+}
+
+.nav-wrap{
+  max-width:1140px;
+  margin:0 auto;
+  padding:.9rem 1.5rem;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:1rem;
+}
+
+.logo{
+  display:flex;
+  align-items:center;
+  gap:.7rem;
+}
+
+.brand-mark{
+  width:42px;
+  height:42px;
+  border-radius:10px;
+  background:linear-gradient(135deg,var(--blue-dark),var(--blue-mid));
+  display:grid;
+  place-items:center;
+  color:var(--white);
+  font-family:'Amiri',serif;
+  font-weight:700;
+  font-size:1.1rem;
+}
+
+.site-name{
+  font-family:'Amiri',serif;
+  font-size:1.2rem;
+  color:var(--blue-dark);
+  font-weight:700;
+}
+
+.site-sub{
+  font-size:.78rem;
+  color:var(--text-soft);
+}
+
+nav{
+  display:flex;
+  gap:.2rem;
+  align-items:center;
+}
+
+nav a{
+  padding:.45rem .8rem;
+  border-radius:8px;
+  font-size:.9rem;
+  font-weight:600;
+  color:var(--text-soft);
+  transition:all .18s;
+}
+
+nav a:hover{
+  color:var(--blue-dark);
+  background:var(--blue-faint);
+}
+
+nav a.active{
+  color:var(--blue-mid);
+  background:var(--blue-pale);
+}
+
+.menu-toggle{
+  display:none;
+  background:0;
+  border:0;
+  color:var(--blue-dark);
+  font-size:1.3rem;
+  cursor:pointer;
+}
+
+/* ══ PAGE HERO ══ */
+.page-hero{
+  background:linear-gradient(135deg,var(--blue-dark) 0%,var(--blue-mid) 100%);
+  padding:3.5rem 1.5rem 5rem;
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+}
+
+.page-hero::after{
+  content:'';
+  position:absolute;
+  bottom:-1px;
+  left:0;
+  right:0;
+  height:56px;
+  background:var(--white);
+  clip-path:ellipse(60% 100% at 50% 100%);
+}
+
+.page-hero h1{
+  font-family:'Amiri',serif;
+  font-size:2.6rem;
+  color:var(--white);
+  margin-bottom:.4rem;
+  position:relative;
+  z-index:1;
+}
+
+.page-hero p{
+  color:rgba(255,255,255,.75);
+  font-size:1rem;
+  position:relative;
+  z-index:1;
+}
+
+/* ══ TAB BAR ══ */
+.tabs-bar{
+  background:var(--white);
+  border-bottom:2px solid var(--border);
+  position:sticky;
+  top:65px;
+  z-index:100;
+}
+
+.tabs-inner{
+  max-width:1140px;
+  margin:0 auto;
+  padding:0 1.5rem;
+  display:flex;
+  gap:0;
+  overflow-x:auto;
+  scrollbar-width:none;
+}
+
+.tabs-inner::-webkit-scrollbar{
+  display:none;
+}
+
+.tab-btn{
+  flex-shrink:0;
+  padding:.85rem 1.3rem;
+  background:0;
+  border:0;
+  font-family:'Noto Naskh Arabic',serif;
+  font-size:.92rem;
+  font-weight:600;
+  color:var(--text-soft);
+  cursor:pointer;
+  border-bottom:3px solid transparent;
+  margin-bottom:-2px;
+  transition:all .2s;
+  display:flex;
+  align-items:center;
+  gap:.4rem;
+}
+
+.tab-btn:hover{
+  color:var(--blue-mid);
+}
+
+.tab-btn.active{
+  color:var(--blue-mid);
+  border-bottom-color:var(--blue-mid);
+}
+
+.tab-btn .badge{
+  background:var(--blue-pale);
+  color:var(--blue-mid);
+  font-size:.72rem;
+  padding:.1rem .4rem;
+  border-radius:10px;
+  font-weight:700;
+}
+
+/* ══ MAIN LAYOUT ══ */
+.page-body{
+  max-width:1140px;
+  margin:0 auto;
+  padding:2rem 1.5rem 4rem;
+}
+
+.sec-head{
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-between;
+  margin-bottom:1.5rem;
+  flex-wrap:wrap;
+  gap:.5rem;
+}
+
+.sec-head h2{
+  font-family:'Amiri',serif;
+  font-size:1.55rem;
+  color:var(--blue-dark);
+}
+
+.sec-head p{
+  font-size:.88rem;
+  color:var(--text-soft);
+  margin-top:.15rem;
+}
+
+.see-all{
+  font-size:.85rem;
+  color:var(--blue-mid);
+  font-weight:600;
+  display:flex;
+  align-items:center;
+  gap:.3rem;
+  white-space:nowrap;
+}
+
+.see-all:hover{
+  text-decoration:underline;
+}
+
+/* ══ SECTION DIVIDER ══ */
+.section-block{
+  margin-bottom:3.5rem;
+}
+
+.section-block:last-child{
+  margin-bottom:0;
+}
+/* ══ SECTION 2: دروس الشيوخ الآخرين ══ */
+.external-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(300px,1fr));
+  gap:1.2rem;
+}
+
+.ext-card{
+  background:var(--white);
+  border:1.5px solid var(--border);
+  border-radius:var(--radius);
+  overflow:hidden;
+  transition:all .22s;
+  cursor:pointer;
+}
+
+.ext-card:hover{
+  box-shadow:var(--shadow-md);
+  transform:translateY(-3px);
+  border-color:var(--blue-light);
+}
+
+.ext-thumb{
+  height:120px;
+  background:linear-gradient(135deg,var(--blue-dark),var(--blue-mid));
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:2.8rem;
+  position:relative;
+}
+
+.ext-source-badge{
+  position:absolute;
+  bottom:.5rem;
+  right:.6rem;
+  background:rgba(255,255,255,.15);
+  backdrop-filter:blur(4px);
+  color:var(--white);
+  font-size:.72rem;
+  font-weight:600;
+  padding:.2rem .55rem;
+  border-radius:6px;
+  border:1px solid rgba(255,255,255,.2);
+}
+
+.ext-body{
+  padding:1rem 1.1rem;
+}
+
+.ext-sheikh{
+  display:flex;
+  align-items:center;
+  gap:.5rem;
+  margin-bottom:.5rem;
+}
+
+.ext-sheikh-dot{
+  width:28px;
+  height:28px;
+  border-radius:50%;
+  background:var(--blue-pale);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-family:'Amiri',serif;
+  font-size:.85rem;
+  color:var(--blue-mid);
+  font-weight:700;
+}
+
+.ext-sheikh-name{
+  font-size:.82rem;
+  color:var(--text-soft);
+  font-weight:600;
+}
+
+.ext-title{
+  font-family:'Amiri',serif;
+  font-size:1.05rem;
+  color:var(--blue-dark);
+  margin-bottom:.4rem;
+  line-height:1.45;
+}
+
+.ext-desc{
+  font-size:.84rem;
+  color:var(--text-soft);
+  line-height:1.65;
+  margin-bottom:.75rem;
+}
+
+.ext-footer{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding-top:.7rem;
+  border-top:1px solid var(--border);
+}
+
+.ext-meta{
+  font-size:.78rem;
+  color:var(--text-soft);
+  display:flex;
+  gap:.7rem;
+}
+
+.ext-link{
+  font-size:.8rem;
+  color:var(--blue-mid);
+  font-weight:600;
+  display:flex;
+  align-items:center;
+  gap:.2rem;
+}
+
+.ext-link:hover{
+  text-decoration:underline;
+}
+
+/* ══ SECTION 3: المراجع والكتب ══ */
+.books-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(200px,1fr));
+  gap:1.2rem;
+}
+
+.book-card{
+  background:var(--white);
+  border:1.5px solid var(--border);
+  border-radius:var(--radius);
+  overflow:hidden;
+  transition:all .22s;
+  cursor:pointer;
+}
+
+.book-card:hover{
+  box-shadow:var(--shadow-md);
+  transform:translateY(-3px);
+  border-color:var(--blue-light);
+}
+
+.book-cover{
+  height:160px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:.4rem;
+  position:relative;
+  overflow:hidden;
+}
+
+.book-cover.c1{background:linear-gradient(160deg,#0a2342,#1e4a80)}
+.book-cover.c2{background:linear-gradient(160deg,#0d3460,#1e6dbf)}
+.book-cover.c3{background:linear-gradient(160deg,#102a50,#2a5fa0)}
+.book-cover.c4{background:linear-gradient(160deg,#071a30,#154070)}
+.book-cover.c5{background:linear-gradient(160deg,#0a2a4a,#1a5a9a)}
+.book-cover.c6{background:linear-gradient(160deg,#0c2438,#184878)}
+
+.book-spine{
+  position:absolute;
+  right:0;
+  top:0;
+  bottom:0;
+  width:10px;
+  background:rgba(0,0,0,.2);
+}
+
+.book-icon{
+  font-size:2.2rem;
+  position:relative;
+  z-index:1;
+}
+
+.book-title-cover{
+  font-family:'Amiri',serif;
+  font-size:.92rem;
+  color:rgba(255,255,255,.9);
+  text-align:center;
+  padding:0 .8rem;
+  line-height:1.4;
+  position:relative;
+  z-index:1;
+}
+
+.book-body{
+  padding:.9rem 1rem;
+}
+
+.book-title{
+  font-family:'Amiri',serif;
+  font-size:1rem;
+  color:var(--blue-dark);
+  margin-bottom:.2rem;
+  line-height:1.4;
+}
+
+.book-author{
+  font-size:.8rem;
+  color:var(--text-soft);
+  margin-bottom:.5rem;
+}
+
+.book-tags{
+  display:flex;
+  gap:.35rem;
+  flex-wrap:wrap;
+}
+
+.book-tag{
+  background:var(--blue-faint);
+  color:var(--blue-mid);
+  font-size:.72rem;
+  font-weight:600;
+  padding:.15rem .5rem;
+  border-radius:5px;
+}
+
+/* ══ EMPTY PLACEHOLDER ══ */
+.placeholder-row{
+  background:var(--blue-faint);
+  border:1.5px dashed var(--blue-pale);
+  border-radius:var(--radius);
+  padding:2.5rem;
+  text-align:center;
+  color:var(--text-soft);
+}
+
+.placeholder-row .ph-icon{
+  font-size:2rem;
+  margin-bottom:.5rem;
+  opacity:.5;
+}
+
+.placeholder-row p{
+  font-size:.9rem;
+}
+
+/* ══ FOOTER ══ */
+footer{
+  border-top:1px solid var(--border);
+  padding:1.5rem 1.5rem;
+  background:var(--white);
+}
+
+.footer-inner{
+  max-width:1140px;
+  margin:0 auto;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:1rem;
+}
+
+.footer-links a{
+  display:inline-block;
+  margin-left:.75rem;
+  font-size:.88rem;
+  font-weight:600;
+  color:var(--text-soft);
+}
+
+.footer-links a:hover{
+  color:var(--blue-mid);
+}
+
+.copyright{
+  font-size:.82rem;
+  color:var(--text-soft);
+}
+
+/* ══ RESPONSIVE ══ */
+@media(max-width:900px){
+  nav{display:none}
+  .menu-toggle{display:inline-block}
+  .scholars-grid{grid-template-columns:1fr 1fr}
+}
+
+@media(max-width:540px){
+  .scholars-grid, .external-grid, .books-grid{grid-template-columns:1fr}
+  .page-hero h1{font-size:1.9rem}
+  .tabs-inner{gap:0}
+  .tab-btn{padding:.75rem .9rem;font-size:.85rem}
+}

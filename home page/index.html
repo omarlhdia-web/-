@@ -1,0 +1,222 @@
+// ...existing code...
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>معالم التحقيق - الرئيسية</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital@0;1&family=Noto+Naskh+Arabic:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <div class="brand-mark">م</div>
+                <div>
+                    <div class="site-title">معالم التحقيق</div>
+                    <div style="font-size:.85rem;color:rgba(10,35,66,.6)">منصة علمية باقية</div>
+                </div>
+            </div>
+
+            <nav aria-label="رئيسي">
+                <div class="nav-links">
+                    <a href="index.html">الرئيسية</a>
+                    <a href="../courses/index.html">دروس</a>
+                    <a href="../responses/index.html">ردود علمية</a>
+                   <a href="../searchs/index.html">بحوث علمية</a>
+                   <a href="..//the doors/index.html">أبواب العلم</a>
+              
+                </div>
+            </nav>
+
+            <button class="menu-toggle" aria-expanded="false" aria-label="قائمة" onclick="toggleMenu(this)">☰</button>
+        </div>
+
+        <!-- Mobile dropdown -->
+        <div id="mobileNav" style="display:none;border-top:1px solid rgba(10,35,66,.03);background:linear-gradient(180deg,rgba(255,255,255,.98),#fff)">
+            <div class="container" style="padding-top:.6rem;padding-bottom:.6rem;">
+                <div style="width:100%;display:flex;flex-direction:column;gap:.5rem">
+                    <a href="../home page/index.html" style="padding:.6rem;border-radius:8px">الرئيسية</a>
+                    <a href="../courses/index.html" style="padding:.6rem;border-radius:8px">دروس</a>
+                    <a href="../responses/index.html" style="padding:.6rem;border-radius:8px">ردود علمية</a>
+                    <a href="../searchs/index.html" style="padding:.6rem;border-radius:8px">بحوث علمية</a>
+                    <a href="../the doors/index.html" style="padding:.6rem;border-radius:8px">أبواب العلم</a>
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero" aria-labelledby="hero-title">
+            <div class="hero-card" role="region" aria-label="مقدمة المنصة">
+                <h1 id="hero-title"></h1>
+            
+
+                <div class="btns" role="group" aria-label="أزرار رئيسية">
+                    <button class="btn btn-primary" onclick="location.href='#lessons'">ابدأ التعلم</button>
+                    <button class="btn btn-outline" onclick="location.href='#content'">تصفح المحتوى</button>
+                </div>
+
+                <div class="stats" aria-hidden="false">
+                    <div class="stat">
+                        <div class="num" data-target="0">0</div>
+                        <div class="label">عدد الدروس</div>
+                    </div>
+                    <div class="stat">
+                        <div class="num" data-target="0">0</div>
+                        <div class="label">الردود العلمية</div>
+                    </div>
+                    <div class="stat">
+                        <div class="num" data-target="0">0</div>
+                        <div class="label">المقالات</div>
+                    </div>
+                    <div class="stat">
+                        <div class="num" data-target="6">0</div>
+                        <div class="label">الأبواب العلمية</div>
+                    </div>
+                </div>
+            </div>
+
+            <aside style="padding:1rem;border-radius:12px;background:linear-gradient(180deg,var(--white),rgba(30,109,191,.03));height:100%;display:flex;flex-direction:column;gap:.75rem;align-items:flex-start" class="aside">
+                <h3 style="margin:0;font-family:'Amiri', serif;color:var(--blue-dark)">البحث السريع</h3>
+                <p style="margin:0;color:rgba(10,35,66,.6)">ابحث في الدروس والمقالات</p>
+                <input aria-label="بحث" placeholder="ابحث..." style="width:100%;padding:.6rem;border-radius:8px;border:1px solid rgba(10,35,66,.06);margin-top:.5rem" class="search">
+                <div style="margin-top:auto;font-size:.9rem;color:rgba(10,35,66,.6)">مرحباً بك في معالم التحقيق</div>
+            </aside>
+        </section>
+
+        <!-- Categories / أبواب العلم -->
+        <section id="content" style="padding:0 1rem">
+            <div style="max-width:1100px;margin:0 auto">
+                <h2 style="font-family:'Amiri', serif;margin:0 0 .75rem;font-size:1.4rem;color:var(--blue-dark)">أبواب العلم</h2>
+                <div class="grid" role="list">
+                    <div class="card" role="listitem">
+                        <div class="thumb aakida"></div>
+                        <div>
+                            <h3>العقيدة</h3>
+                            <p>أساس الدين ومتون علمية موثوقة.</p>
+                        </div>
+                    </div>
+
+                    <div class="card" role="listitem">
+                        <div class="thumb quran"></div>
+                        <div>
+                            <h3>القرآن</h3>
+                            <p>تفسير، تجويد، ومقاصد.</p>
+                        </div>
+                    </div>
+
+                    <div class="card" role="listitem">
+                        <div class="thumb fiqh"></div>
+                        <div>
+                            <h3>الفقه</h3>
+                            <p>مسائل عملية موثقة بشروح مبسطة.</p>
+                        </div>
+                    </div>
+
+                    <div class="card" role="listitem">
+                        <div class="thumb hadith"></div>
+                        <div>
+                            <h3>الحديث</h3>
+                            <p>شرح الأحاديث وطرق الجرح والتعديل.</p>
+                        </div>
+                    </div>
+
+                    <div class="card" role="listitem">
+                        <div class="thumb refutations"></div>
+                        <div>
+                            <h3>ردود</h3>
+                            <p>ردود علمية على الشبهات المعاصرة.</p>
+                        </div>
+                    </div>
+
+                    <div class="card" role="listitem">
+                        <div class="thumb morals"></div>
+                        <div>
+                            <h3>أخلاق</h3>
+                            <p>تطبيقات عملية للسلوك الإسلامي.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured lessons -->
+        <section id="lessons" style="padding:0 1rem">
+            <h2 class="title-courses" >دروس المحققين:</h2>
+            <div class="lessons" role="list">
+                <article class="lesson" role="listitem" aria-label="درس 1">
+                    <div class="img" style="background-image:linear-gradient(135deg, rgba(10,35,66,.12), rgba(30,109,191,.12)), url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22120%22 height=%2270%22><rect width=%22120%22 height=%2270%22 fill=%22%231e6dbf%22/></svg>')"></div>
+                    <div class="info">
+                        <h4>دروس العقيدة</h4>
+                        <p>مقدمة مبسطة في أصول الاعتقاد وأدلتها.</p>
+                    </div>
+                </article>
+
+                <article class="lesson" role="listitem" aria-label="درس 2">
+                    <div class="img" style="background-image:linear-gradient(135deg, rgba(10,35,66,.12), rgba(30,109,191,.12)), url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22120%22 height=%2270%22><rect width=%22120%22 height=%2270%22 fill=%22%230a2342%22/></svg>')"></div>
+                    <div class="info">
+                        <h4>دروس الفقه</h4>
+                        <p>مسائل عملية موثقة بشروح مبسطة.</p>
+                    </div>
+                </article>
+
+                <article class="lesson" role="listitem" aria-label="درس 3">
+                    <div class="img" style="background-image:linear-gradient(135deg, rgba(10,35,66,.12), rgba(30,109,191,.12)), url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22120%22 height=%2270%22><rect width=%22120%22 height=%2270%22 fill=%22%231e6dbf%22/></svg>')"></div>
+                    <div class="info">
+                        <h4>دروس المنطق</h4>
+                        <p></p>شرح متون المنطق مع ضوابط.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Ayah banner -->
+        <section style="padding:0 1rem">
+            <div class="ayah" role="region" aria-label="آية كريمة">
+                <div class="text">"وَقُل رَّبِّ زِدْنِي عِلْمًا"</div>
+                <div class="reference">سورة طه: 114</div>
+            </div>
+        </section>
+
+        <!-- Latest articles -->
+        <section style="padding:0 1rem">
+            <div class="articles" role="list" aria-label="أحدث المقالات">
+                <h3 style="margin:0 0 .5rem;font-family:'Amiri', serif;color:var(--blue-dark)">أحدث المقالات</h3>
+                <div class="article-item">
+                    <a href="#">مقال: السلوك الدعوي المعاصر</a>
+                    <time datetime="2026-06-01">1 يونيو 2026</time>
+                </div>
+                <div class="article-item">
+                    <a href="#">مقال: منهج المحدثين في التحقق</a>
+                    <time datetime="2026-05-25">25 مايو 2026</time>
+                </div>
+                <div class="article-item">
+                    <a href="#">مقال: قواعد في فهم النص الشرعي</a>
+                    <time datetime="2026-05-10">10 مايو 2026</time>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-links">
+                <a href="#">من نحن</a>
+                <a href="#">سياسة الخصوصية</a>
+                <a href="#">اتصل بنا</a>
+            </div>
+            <div class="copyright">&copy; 2026 معالم التحقيق. جميع الحقوق محفوظة.</div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+// ...existing code...

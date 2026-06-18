@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>معالم التحقيق — أبواب العلم</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Noto+Naskh+Arabic:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="nav-wrap">
+    <a class="logo" href="../home page/index.html">
+      <div class="brand-mark">م</div>
+      <div>
+        <div class="site-name">معالم التحقيق</div>
+        <div class="site-sub">منصة علمية باقية</div>
+      </div>
+    </a>
+    <nav>
+      <a href="../home page/index.html">الرئيسية</a>
+      <a href="../courses/index.html">الدروس</a>
+      <a href="../responses/index.html">الردود العلمية</a>
+      <a href="../searchs/index.html">البحوث العلمية</a>
+       <a href="index.html" class="active">أبواب العلم</a>
+    </nav>
+    <button class="menu-toggle" id="menuToggleBtn" aria-label="القائمة">☰</button>
+  </div>
+  <div id="mobileNav" style="display:none;border-top:1px solid var(--border);background:var(--white)">
+    <div style="max-width:1140px;margin:0 auto;padding:.6rem 1.5rem;display:flex;flex-direction:column;gap:.3rem">
+      <a href="../home page/index.html" style="padding:.55rem .7rem;border-radius:8px;color:var(--text-soft);font-weight:600">الرئيسية</a>
+      <a href="../courses/index.html" style="padding:.55rem .7rem;border-radius:8px;color:var(--text-soft);font-weight:600">الدروس</a>
+      <a href="index.html" style="padding:.55rem .7rem;border-radius:8px;color:var(--blue-mid);background:var(--blue-faint);font-weight:600">أبواب العلم</a>
+      <a href="../responses/index.html" style="padding:.55rem .7rem;border-radius:8px;color:var(--text-soft);font-weight:600">الردود العلمية</a>
+      <a href="../searchs/index.html" style="padding:.55rem .7rem;border-radius:8px;color:var(--text-soft);font-weight:600">البحوث العلمية</a>
+    </div>
+  </div>
+</header>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="hero-ornament">بسم الله الرحمن الرحيم</div>
+  <h1>أبواب العلم</h1>
+  <p>كل باب يُفتح على علم، وكل علم يُفضي إلى معرفة الله — اختر بابك وابدأ رحلتك العلمية</p>
+  <div class="hero-stats">
+    <div class="hs-item"><span class="hs-num">٦</span><span class="hs-label">أبواب علمية</span></div>
+    <div class="hs-sep">·</div>
+    <div class="hs-item"><span class="hs-num">٠</span><span class="hs-label">درس ومقال</span></div>
+    <div class="hs-sep">·</div>
+    <div class="hs-item"><span class="hs-num">٠</span><span class="hs-label">بحث وردّ</span></div>
+  </div>
+</div>
+
+<!-- PAGE BODY -->
+<div class="page-body">
+
+  <div class="intro-row">
+    <div class="intro-text">
+      <h2>تصفّح بحسب الباب العلمي</h2>
+      <p>يعتمد الموقع تصنيف العلوم الشرعية إلى أبواب رئيسية لتيسير الوصول والبحث — اختر الباب الذي يعنيك لتطّلع على دروسه وبحوثه وردوده.</p>
+    </div>
+    <div class="intro-quote">
+      <div class="iq-text">"مَن سَلَكَ طَرِيقًا يَلْتَمِسُ فِيهِ عِلْمًا سَهَّلَ اللَّهُ لَهُ طَرِيقًا إِلَى الجَنَّةِ"</div>
+      <div class="iq-ref">صحيح مسلم</div>
+    </div>
+  </div>
+
+  <!-- ABWAB GRID -->
+  <div class="abwab-grid">
+
+    <!-- العقيدة -->
+    <a href="akida/index.html" class="bab-card" data-bab="aakida">
+      <div class="bab-visual">
+        <div class="bab-icon-wrap">
+          <span class="bab-ar">عق</span>
+        </div>
+        <div class="bab-glow"></div>
+      </div>
+      <div class="bab-body">
+        <div class="bab-label">الباب الأول</div>
+        <h3 class="bab-title">العقيدة</h3>
+        <p class="bab-desc">أساس الدين وأصول الإيمان — متون علمية موثّقة مع شروح مبسّطة تُعين على الفهم والحفظ.</p>
+        <div class="bab-topics">
+          <span class="topic-chip">التوحيد</span>
+          <span class="topic-chip">أسماء وصفات</span>
+          <span class="topic-chip">الإيمان</span>
+          <span class="topic-chip">الفرق</span>
+        </div>
+        <div class="bab-footer">
+          <div class="bab-counts">
+            <span>📚 <b>٠</b> درس</span>
+            <span>📄 <b>٠</b> بحث</span>
+          </div>
+          <span class="bab-arrow">←</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- القرآن -->
+    <a href="quran/index.html" class="bab-card" data-bab="quran">
+      <div class="bab-visual">
+        <div class="bab-icon-wrap">
+          <span class="bab-ar">قرآ</span>
+        </div>
+        <div class="bab-glow"></div>
+      </div>
+      <div class="bab-body">
+        <div class="bab-label">الباب الثاني</div>
+        <h3 class="bab-title">القرآن الكريم</h3>
+        <p class="bab-desc">تفسير الآيات، علوم القرآن، التجويد والمقاصد — منهج علمي رصين في التعامل مع كتاب الله.</p>
+        <div class="bab-topics">
+          <span class="topic-chip">التفسير</span>
+          <span class="topic-chip">التجويد</span>
+          <span class="topic-chip">المقاصد</span>
+          <span class="topic-chip">الإعجاز</span>
+        </div>
+        <div class="bab-footer">
+          <div class="bab-counts">
+            <span>📚 <b>٠</b> درس</span>
+            <span>📄 <b>٠</b> بحث</span>
+          </div>
+          <span class="bab-arrow">←</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- الفقه -->
+    <a href="fiqh/index.html" class="bab-card" data-bab="fiqh">
+      <div class="bab-visual">
+        <div class="bab-icon-wrap">
+          <span class="bab-ar">فقه</span>
+        </div>
+        <div class="bab-glow"></div>
+      </div>
+      <div class="bab-body">
+        <div class="bab-label">الباب الثالث</div>
+        <h3 class="bab-title">الفقه وأصوله</h3>
+        <p class="bab-desc">مسائل عملية موثّقة بشروح مبسّطة — من الطهارة والصلاة إلى المعاملات والأحوال الشخصية.</p>
+        <div class="bab-topics">
+          <span class="topic-chip">العبادات</span>
+          <span class="topic-chip">المعاملات</span>
+          <span class="topic-chip">أصول الفقه</span>
+          <span class="topic-chip">الفتاوى</span>
+        </div>
+        <div class="bab-footer">
+          <div class="bab-counts">
+            <span>📚 <b>٠</b> درس</span>
+            <span>📄 <b>٠</b> بحث</span>
+          </div>
+          <span class="bab-arrow">←</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- الحديث -->
+    <a href="hadith/index.html" class="bab-card" data-bab="hadith">
+      <div class="bab-visual">
+        <div class="bab-icon-wrap">
+          <span class="bab-ar">حدث</span>
+        </div>
+        <div class="bab-glow"></div>
+      </div>
+      <div class="bab-body">
+        <div class="bab-label">الباب الرابع</div>
+        <h3 class="bab-title">الحديث وعلومه</h3>
+        <p class="bab-desc">شرح الأحاديث النبوية، علم الجرح والتعديل، ومصطلح الحديث — بمنهج المحدثين الضابطين.</p>
+        <div class="bab-topics">
+          <span class="topic-chip">شرح الأحاديث</span>
+          <span class="topic-chip">المصطلح</span>
+          <span class="topic-chip">الجرح والتعديل</span>
+          <span class="topic-chip">التخريج</span>
+        </div>
+        <div class="bab-footer">
+          <div class="bab-counts">
+            <span>📚 <b>٠</b> درس</span>
+            <span>📄 <b>٠</b> بحث</span>
+          </div>
+          <span class="bab-arrow">←</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- الردود -->
+    <a href="rudood/index.html" class="bab-card" data-bab="rudood">
+      <div class="bab-visual">
+        <div class="bab-icon-wrap">
+          <span class="bab-ar">ردّ</span>
+        </div>
+        <div class="bab-glow"></div>
+      </div>
+      <div class="bab-body">
+        <div class="bab-label">الباب الخامس</div>
+        <h3 class="bab-title">الردود العلمية</h3>
+        <p class="bab-desc">ردود محرّرة على الشبهات المعاصرة والأسئلة العلمية — بأسلوب موثّق يعتمد النقل والعقل.</p>
+        <div class="bab-topics">
+          <span class="topic-chip">شبهات عقدية</span>
+          <span class="topic-chip">شبهات فقهية</span>
+          <span class="topic-chip">أسئلة المتابعين</span>
+        </div>
+        <div class="bab-footer">
+          <div class="bab-counts">
+            <span>📚 <b>٠</b> ردّ</span>
+            <span>📄 <b>٠</b> مقال</span>
+          </div>
+          <span class="bab-arrow">←</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- الأخلاق -->
+    <a href="akhlaq/index.html" class="bab-card" data-bab="akhlaq">
+      <div class="bab-visual">
+        <div class="bab-icon-wrap">
+          <span class="bab-ar">أخل</span>
+        </div>
+        <div class="bab-glow"></div>
+      </div>
+      <div class="bab-body">
+        <div class="bab-label">الباب السادس</div>
+        <h3 class="bab-title">الأخلاق والسلوك</h3>
+        <p class="bab-desc">تطبيقات عملية للسلوك الإسلامي القويم — من تزكية النفس إلى التعامل مع الناس والمجتمع.</p>
+        <div class="bab-topics">
+          <span class="topic-chip">تزكية النفس</span>
+          <span class="topic-chip">السلوك الدعوي</span>
+          <span class="topic-chip">الآداب الشرعية</span>
+        </div>
+        <div class="bab-footer">
+          <div class="bab-counts">
+            <span>📚 <b>٠</b> درس</span>
+            <span>📄 <b>٠</b> مقال</span>
+          </div>
+          <span class="bab-arrow">←</span>
+        </div>
+      </div>
+    </a>
+
+  </div><!-- /abwab-grid -->
+
+  <!-- BOTTOM BANNER -->
+  <div class="bottom-banner">
+    <div class="bb-text">
+      <h3>لا تجد ما تبحث عنه؟</h3>
+      <p>يمكنك إرسال سؤالك أو اقتراح موضوع لإضافته — محققو الموقع يراجعون جميع الاقتراحات</p>
+    </div>
+    <a href="../responses/index.html" class="bb-btn">اسأل محققينا ←</a>
+  </div>
+
+</div><!-- /page-body -->
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-links">
+      <a href="#">من نحن</a>
+      <a href="#">سياسة الخصوصية</a>
+      <a href="#">اتصل بنا</a>
+    </div>
+    <div class="copyright">&copy; 2026 معالم التحقيق — جميع الحقوق محفوظة</div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
