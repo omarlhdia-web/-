@@ -106,7 +106,7 @@
             border-radius:var(--radius);
             background:linear-gradient(180deg, rgba(30,109,191,.06), rgba(10,35,66,.02));
             box-shadow: 0 6px 18px rgba(10,35,66,.04);
-            background-image: url(../homeimages/onee.png);
+            background-image: url(../homeimages/onee.jfif);
             background-size: cover;
             display: flex;
             flex-direction: column;
@@ -114,6 +114,18 @@
             justify-content: flex-end;
             
         }
+        @media (max-width:900px){
+           
+            .hero-card{
+                height:320px;
+                background-image: url(../homeimages/mobile.jfif);
+                background-size: cover;
+                background-position: right;
+            }
+        }
+
+            
+        
         .hero h1{
             margin:0 0 .5rem 0;
             font-family: "Amiri", serif;
@@ -161,6 +173,21 @@
             box-shadow:0 8px 20px rgba(10,35,66,.04);
             border:1px solid rgba(10,35,66,.04);
             display:flex;gap:.75rem;align-items:center;
+        }
+        .card-link{
+            cursor:pointer;
+            transition:all .2s ease;
+            text-decoration:none;
+            color:inherit;
+        }
+        .card-link:hover{
+            transform:translateY(-4px);
+            box-shadow:0 12px 28px rgba(10,35,66,.12);
+            border-color:var(--blue-mid);
+            background:linear-gradient(180deg, rgba(30,109,191,.03), rgba(10,35,66,.01));
+        }
+        .card-link:active{
+            transform:translateY(-2px);
         }
         .search:focus{
             outline:none;
