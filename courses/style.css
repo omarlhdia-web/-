@@ -122,6 +122,53 @@ nav a.active{
   cursor:pointer;
 }
 
+/* Mobile Navigation - إضافة/تحديث */
+#mobileNav{
+  display:none;
+  border-top:1px solid var(--border);
+  background:rgba(255,255,255,.96);
+  backdrop-filter:blur(8px);
+  position:fixed;
+  left:0;
+  right:0;
+  top:72px; /* below header */
+  z-index:999;
+  max-height:calc(100vh - 72px);
+  overflow:auto;
+}
+
+#mobileNav.is-open{
+  display:block !important;
+}
+
+#mobileNav > div{
+  max-width:1140px;
+  margin:0 auto;
+  padding:.6rem 1.5rem;
+  display:flex;
+  flex-direction:column;
+  gap:.3rem;
+}
+
+#mobileNav a{
+  padding:.55rem .7rem;
+  border-radius:8px;
+  color:var(--text-soft);
+  font-weight:600;
+  transition:all .2s ease;
+  display:block;
+}
+
+#mobileNav a:hover{
+  background:rgba(30,109,191,.08);
+  color:var(--blue-mid);
+}
+
+#mobileNav a.active{
+  color:var(--blue-mid);
+  background:var(--blue-pale);
+}
+
 /* ══ PAGE HERO ══ */
 .page-hero{
   background:linear-gradient(135deg,var(--blue-dark) 0%,var(--blue-mid) 100%);
@@ -545,6 +592,12 @@ footer{
   nav{display:none}
   .menu-toggle{display:inline-block}
   .scholars-grid{grid-template-columns:1fr 1fr}
+}
+
+/* prevent body scroll when mobile nav open */
+body.mobile-nav-open{
+  overflow:hidden;
+  touch-action:none;
 }
 
 @media(max-width:540px){

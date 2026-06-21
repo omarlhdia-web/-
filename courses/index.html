@@ -27,18 +27,24 @@
       <a href="../searchs/index.html">بحوث علمية</a>
       <a href="..//the doors/index.html">أبواب العلم</a>
     </nav>
-    <button class="menu-toggle" id="menuToggleBtn" aria-label="القائمة">☰</button>
+    <!-- changed: add aria-controls and aria-expanded to the button -->
+    <button class="menu-toggle" id="menuToggleBtn" aria-label="القائمة" aria-controls="mobileNav" aria-expanded="false">☰</button>
   </div>
-  <div id="mobileNav" role="navigation" aria-label="التنقل المحمول" style="display:none;border-top:1px solid var(--border);background:var(--white)"></div>
-    <div style="max-width:1140px;margin:0 auto;padding:.6rem 1.5rem;display:flex;flex-direction:column;gap:.3rem">
-      <a href="..//home page/index.html" style="padding:.55rem .7rem;border-radius:8px;color:var(--text-soft);font-weight:600">الرئيسية</a>
-      <a href="../courses/index.html" style="padding:.55rem .7rem;border-radius:8px;color:var(--blue-mid);font-weight:600;background:var(--blue-faint)">الدروس</a>
-      <a href="../responses/index.html" style="padding:.55rem .7rem;border-radius:8px;color:var(--text-soft);font-weight:600">ردود علمية</a>
-      <a href="../searchs/index.html" style="padding:.55rem .7rem;border-radius:8px;color:var(--text-soft);font-weight:600">بحوث علمية</a>
-      <a href="..//the doors/index.html" style="padding:.55rem .7rem;border-radius:8px;color:var(--text-soft);font-weight:600">أبواب العلم</a>
+  <!-- changed: mark mobile nav as hidden initially -->
+  <nav
+    class="mobile-nav"
+    id="mobileNav"
+    aria-label="القائمة الرئيسية"
+    aria-hidden="true"
+  >
+    <div class="mobile-nav-inner">
+      <a href="..//home page/index.html">الرئيسية</a>
+      <a href="../courses/index.html" class="active">الدروس</a>
+      <a href="../responses/index.html">ردود علمية</a>
+      <a href="../searchs/index.html">بحوث علمية</a>
+      <a href="..//the doors/index.html">أبواب العلم</a>
     </div>
-  </div>
-  </div>
+  </nav>
 </header>
 
 <div class="page-hero">
