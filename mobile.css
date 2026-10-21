@@ -1,0 +1,177 @@
+/* Keep the viewport width stable when pages differ in whether they need a vertical scrollbar. */
+html { scrollbar-gutter: stable; }
+
+/* Shared mobile refinements; page styles and colors stay in their own stylesheets. */
+@media (max-width: 900px) {
+  html { scroll-padding-top: 5rem; }
+  body { min-width: 0; overflow-x: hidden; }
+
+  header .nav-wrap,
+  header > .container {
+    min-height: 64px;
+    padding: .5rem max(.75rem, env(safe-area-inset-right)) .5rem max(.75rem, env(safe-area-inset-left));
+    gap: .65rem;
+  }
+
+  header .logo { min-width: 0; gap: .55rem; }
+  header .site-name,
+  header .site-title { font-size: 1.08rem; line-height: 1.3; }
+  header .site-sub { font-size: .72rem; }
+  header .brand-mark { flex: 0 0 42px; width: 42px; height: 42px; }
+
+  header .nav-wrap > nav,
+  header > .container > nav { display: none; }
+
+  header .menu-toggle {
+    display: inline-grid;
+    flex: 0 0 48px;
+    width: 48px;
+    height: 48px;
+    min-width: 48px;
+    min-height: 48px;
+    place-items: center;
+    border: 1px solid rgba(10, 35, 66, .1);
+    border-radius: 10px;
+    background: var(--blue-faint, #f0f7fd);
+    color: var(--blue-dark, #0a2342);
+    font-size: 1.3rem;
+  }
+
+  header #mobileNav,
+  header .mobile-nav {
+    position: fixed;
+    inset-block-start: 64px;
+    inset-inline: 0;
+    z-index: 999;
+    max-height: calc(100vh - 64px);
+    max-height: calc(100dvh - 64px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    border-top: 1px solid rgba(10, 35, 66, .08);
+    background: var(--white, #fff);
+    box-shadow: 0 10px 20px rgba(10, 35, 66, .08);
+  }
+
+  header #mobileNav a,
+  header .mobile-nav a {
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+    padding: .65rem .8rem;
+    border-radius: 8px;
+  }
+
+  .page-hero { padding: 2.5rem 1rem 4rem; }
+  .page-hero h1 { font-size: clamp(1.8rem, 7vw, 2.5rem); line-height: 1.35; overflow-wrap: anywhere; }
+  .page-hero p { max-width: 38rem; font-size: .95rem; }
+  .hero-inner,
+  .page-body { width: 100%; padding-inline: 1rem; }
+
+  .tabs-bar { top: 64px; }
+  .tabs-inner { padding-inline: .65rem; gap: .15rem; }
+  .tab-btn { min-height: 48px; padding: .7rem .85rem; white-space: nowrap; }
+
+  .intro-row { grid-template-columns: minmax(0, 1fr); gap: 1.25rem; }
+  .sec-head { align-items: flex-start; }
+  .sec-head h2 { font-size: 1.35rem; line-height: 1.4; }
+  .content-card,
+  .book-card,
+  .reply-card,
+  .research-card,
+  .lesson { min-width: 0; }
+
+  .book-title { overflow-wrap: anywhere; }
+  .book-playlist-link,
+  .book-file-link,
+  .placeholder-link { min-height: 44px; display: inline-flex; align-items: center; }
+
+  .playlist-summary,
+  .aqida-playlist summary { min-height: 60px; }
+  .playlist-summary-text,
+  .playlist-summary-text strong,
+  .aqida-playlist summary > span:nth-child(2) { min-width: 0; overflow-wrap: anywhere; }
+  .playlist-summary-action,
+  .aqida-toggle { white-space: normal; text-align: center; }
+  .playlist-player,
+  .aqida-player { width: 100%; aspect-ratio: 16 / 9; }
+  .playlist-episodes,
+  .aqida-episodes { grid-template-columns: minmax(0, 1fr); }
+
+  .filters-inner { align-items: stretch; }
+  .search-wrap { width: 100%; margin: 0; }
+  .search-wrap input { width: 100%; min-height: 46px; }
+  .filter-chip { min-height: 42px; }
+
+  .content-empty { padding: 1.5rem 1rem; }
+  .content-empty h2 { font-size: 1.4rem; }
+  .content-empty-actions { flex-direction: column; }
+  .empty-link { min-height: 46px; width: 100%; }
+  .placeholder-card { padding: 1.75rem 1rem; }
+
+  .featured-banner { padding: 1.25rem; gap: 1rem; }
+  .feat-title { font-size: 1.25rem; }
+  .feat-meta { gap: .4rem; }
+  .feat-cta,
+  .feat-btn { width: 100%; }
+
+  .ayah { flex-direction: column; align-items: flex-start; }
+  .footer-inner { align-items: flex-start; flex-direction: column; }
+  .footer-links { display: flex; flex-wrap: wrap; gap: .25rem .6rem; }
+  .footer-links a { min-height: 44px; display: inline-flex; align-items: center; margin: 0; }
+  .copyright { line-height: 1.6; }
+
+  button,
+  summary,
+  a { -webkit-tap-highlight-color: rgba(30, 109, 191, .12); }
+}
+
+@media (max-width: 540px) {
+  header .nav-wrap,
+  header > .container { padding-inline-start: max(.65rem, env(safe-area-inset-right)); padding-inline-end: max(.65rem, env(safe-area-inset-left)); }
+  .page-body { padding-block: 1.5rem 3rem; }
+  .grid,
+  .lessons,
+  .abwab-grid,
+  .content-grid,
+  .books-grid,
+  .scholars-grid,
+  .external-grid,
+  .playlist-grid,
+  .reply-grid,
+  .research-grid { grid-template-columns: minmax(0, 1fr) !important; }
+  .book-card { display: grid; grid-template-columns: 5.5rem minmax(0, 1fr); }
+  .book-cover { grid-column: 1; grid-row: 1; height: 100%; min-height: 8rem; }
+  .book-body { grid-column: 2; grid-row: 1; min-width: 0; padding: .8rem; }
+  .page-hero { padding-block: 2rem 3.4rem; }
+  .hero-stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .35rem; }
+  .hs-sep { display: none; }
+  .hs-label { text-align: center; line-height: 1.35; }
+  .breadcrumb-bar { padding-inline: .85rem; overflow-x: auto; }
+  .breadcrumb-inner { min-width: max-content; }
+  .tabs-inner { overflow-x: auto; overscroll-behavior-inline: contain; }
+  .hero-card { border-radius: 12px; }
+  .hero-card .stats { gap: .45rem; }
+  .hero-card .stat { padding: .5rem; }
+  .hero-card .stat .label { white-space: normal; text-align: center; }
+  .search-results { max-height: 38vh; }
+  .search-result { min-height: 48px; align-items: flex-start; }
+  .search-result-title { line-height: 1.45; }
+  .rc-header { flex-wrap: wrap; }
+  .rc-footer { align-items: flex-start; flex-direction: column; gap: .6rem; }
+  .rl-item { padding: .9rem; gap: .75rem; }
+  .back-link { min-height: 46px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+}
+
+@media (hover: none) {
+  .card-link:hover,
+  .lesson:hover,
+  .content-card:hover,
+  .book-card:hover,
+  .reply-card:hover,
+  .research-card:hover { transform: none; }
+}

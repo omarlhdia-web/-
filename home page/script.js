@@ -4,11 +4,23 @@ function toggleMenu(btn){
     var menu = document.getElementById('mobileNav');
     var opened = menu.style.display === 'block';
     menu.style.display = opened ? 'none' : 'block';
-    btn.setAttribute('aria-expanded', String(!opened));
+    menu.setAttribute('aria-hidden', String(opened));
+    if (btn) btn.setAttribute('aria-expanded', String(!opened));
 }
 
 // عدّاد بسيط عند التحميل (count-up)
 document.addEventListener('DOMContentLoaded', function(){
+    document.querySelectorAll('#mobileNav a').forEach(function(link){
+        link.addEventListener('click', function(){
+            var menu = document.getElementById('mobileNav');
+            var button = document.querySelector('.menu-toggle');
+            if (menu) {
+                menu.style.display = 'none';
+                menu.setAttribute('aria-hidden', 'true');
+            }
+            if (button) button.setAttribute('aria-expanded', 'false');
+        });
+    });
     var counters = document.querySelectorAll('.num');
     counters.forEach(function(el){
         var target = +el.getAttribute('data-target') || 0;

@@ -34,8 +34,20 @@ function toggleMenu(btn) {
   if (!m) return;
   var open = m.style.display === 'block';
   m.style.display = open ? 'none' : 'block';
+  m.setAttribute('aria-hidden', String(open));
   if (btn) btn.setAttribute('aria-expanded', String(!open));
 }
+
+document.addEventListener('DOMContentLoaded', function () {
+  document.querySelectorAll('#mobileNav a').forEach(function (link) {
+    link.addEventListener('click', function () {
+      var menu = document.getElementById('mobileNav');
+      var button = document.querySelector('.menu-toggle');
+      if (menu) { menu.style.display = 'none'; menu.setAttribute('aria-hidden', 'true'); }
+      if (button) button.setAttribute('aria-expanded', 'false');
+    });
+  });
+});
 
 document.addEventListener('DOMContentLoaded', function () {
   if (document.getElementById('tab-all')) {

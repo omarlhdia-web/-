@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Noto+Naskh+Arabic:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="../mobile.css">
 </head>
 <body>
 
@@ -83,11 +84,23 @@
   <div id="tab-marajie" class="tab-content section-block" style="display:none">
     <div class="sec-head">
       <div>
-        <h2>المراجع والكتب</h2>
-        <p>المتون التي تتناولها سلاسل القناة، مع رابط مباشر إلى دروس كل متن.</p>
+        <h2>مكتبة معالم التحقيق</h2>
+        <p>ابحث في المتون والمراجع، وافتح الكتاب أو انتقل إلى شرحه.</p>
       </div>
     </div>
 
+    <div class="library-search-panel">
+      <label for="librarySearch">ابحث في الكتب</label>
+      <div class="library-search-control">
+        <span aria-hidden="true">⌕</span>
+        <input id="librarySearch" type="search" placeholder="عنوان الكتاب أو المؤلف أو الموضوع" autocomplete="off">
+        <button type="button" id="clearLibrarySearch" aria-label="مسح البحث">×</button>
+      </div>
+      <p id="librarySearchStatus" role="status">٧ كتب ومراجع في المكتبة</p>
+    </div>
+
+    <div class="bookshelf" aria-label="مكتبة الكتب">
+    <div class="book-shelf">
     <div class="books-grid">
       <article class="book-card">
         <div class="book-cover book-cover-image"><img src="covers/aqidah-tahawiyya.png" alt="غلاف متن العقيدة الطحاوية للإمام أبي جعفر الطحاوي"></div>
@@ -109,6 +122,10 @@
         <div class="book-cover book-cover-image"><img src="covers/al-aqida-al-wasitiyya.jpg" alt="غلاف العقيدة الواسطية لشيخ الإسلام ابن تيمية"></div>
         <div class="book-body"><div class="book-title">العقيدة الواسطية</div><div class="book-author">ابن تيمية · SDOCX</div><div class="book-tags"><span class="book-tag">العقيدة</span></div><a class="book-file-link" href="books/%D8%A7%D9%84%D8%B9%D9%82%D9%8A%D8%AF%D8%A9%20%D8%A7%D9%84%D9%88%D8%A7%D8%B3%D8%B7%D9%8A%D8%A9%20%D9%84%D8%B4%D9%8A%D8%AE%20%D8%A7%D9%84%D8%A5%D8%B3%D9%84%D8%A7%D9%85%20%D8%A7%D8%A8%D9%86%20%D8%AA%D9%8A%D9%85%D9%8A%D8%A9%20-%20%D8%AA_%20%D8%A7%D9%84%D8%B3%D9%82%D8%A7_260527_131200.sdocx" download>تنزيل الكتاب ↓</a></div>
       </article>
+    </div>
+    </div>
+    <div class="book-shelf">
+    <div class="books-grid">
       <article class="book-card">
         <div class="book-cover book-cover-image"><img src="covers/at-tuhfa-as-saniyya.png" alt="غلاف التحفة السنية بشرح المقدمة الآجرومية لمحمد محيي الدين عبد الحميد"></div>
         <div class="book-body"><div class="book-title">التحفة السنية بشرح المقدمة الآجرومية</div><div class="book-author">SDOCX</div><div class="book-tags"><span class="book-tag">النحو</span></div><a class="book-file-link" href="books/Noor-Bookcom%20%20%D8%A7%D9%84%D8%AA%D8%AD%D9%81%D8%A9%20%D8%A7%D9%84%D8%B3%D9%86%D9%8A%D8%A9%20%D8%A8%D8%B4%D8%B1%D8%AD%20%D8%A7%D9%84%D9%85%D9%82%D8%AF%D9%85%D8%A9%20%D8%A7%D9%84%D8%A2%D8%AC%D8%B1%D9%88%D9%85%D9%8A_260716_231930.sdocx" download>تنزيل الكتاب ↓</a></div>
@@ -117,6 +134,8 @@
         <div class="book-cover book-cover-image"><img src="covers/taaleeq-tahawiyya.jpg" alt="غلاف كتاب التعليق على مواضع من شرح العقيدة الطحاوية"></div>
         <div class="book-body"><div class="book-title">التعليق على مواضع من شرح العقيدة الطحاوية</div><div class="book-author">محمد بن صالح العثيمين · PDF</div><div class="book-tags"><span class="book-tag">العقيدة</span></div><a class="book-file-link" href="books/a1635n.pdf" target="_blank" rel="noopener noreferrer">فتح الكتاب </a></div>
       </article>
+    </div>
+    </div>
     </div>
   </div>
 
@@ -178,6 +197,34 @@
   const searchParams = new URLSearchParams(window.location.search);
   const searchQuery = searchParams.get("q");
   const searchType = searchParams.get("type");
+  const librarySearch = document.getElementById("librarySearch");
+  const librarySearchStatus = document.getElementById("librarySearchStatus");
+  const clearLibrarySearch = document.getElementById("clearLibrarySearch");
+  if (librarySearch && librarySearchStatus) {
+    const libraryBooks = [...document.querySelectorAll("#tab-marajie .book-card")];
+    const normalizeLibraryText = value => value.toLocaleLowerCase("ar").normalize("NFD")
+      .replace(/[\u064B-\u065F\u0670\u0640]/g, "").replace(/[أإآ]/g, "ا").replace(/ى/g, "ي");
+    const filterLibrary = () => {
+      const query = normalizeLibraryText(librarySearch.value.trim());
+      let count = 0;
+      libraryBooks.forEach(card => {
+        const matches = !query || normalizeLibraryText(card.textContent).includes(query);
+        card.hidden = !matches;
+        if (matches) count++;
+      });
+      librarySearchStatus.textContent = query
+        ? (count ? `عُثر على ${count} من الكتب` : "لا توجد كتب مطابقة؛ جرّب كلمة أخرى")
+        : `${libraryBooks.length} كتب ومراجع في المكتبة`;
+    };
+    librarySearch.addEventListener("input", filterLibrary);
+    clearLibrarySearch?.addEventListener("click", () => {
+      librarySearch.value = "";
+      filterLibrary();
+      librarySearch.focus();
+    });
+    if (searchQuery && searchType === "book") librarySearch.value = searchQuery;
+    filterLibrary();
+  }
   if (searchQuery) {
     const normalizeSearch = value => value.toLocaleLowerCase("ar").normalize("NFD")
       .replace(/[\u064B-\u065F\u0670\u0640]/g, "").replace(/[أإآ]/g, "ا").replace(/ى/g, "ي");

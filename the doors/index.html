@@ -7,6 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Noto+Naskh+Arabic:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="../mobile.css">
 </head>
 <body>
 
@@ -27,15 +28,15 @@
       <a href="../searchs/index.html">البحوث العلمية</a>
        <a href="index.html" class="active">أبواب العلم</a>
     </nav>
-    <button class="menu-toggle" id="menuToggleBtn" aria-label="القائمة">☰</button>
+    <button class="menu-toggle" id="menuToggleBtn" aria-label="القائمة" aria-controls="mobileNav" aria-expanded="false">☰</button>
   </div>
-  <div id="mobileNav" style="display:none;border-top:1px solid var(--border);background:var(--white)">
+  <div id="mobileNav" aria-hidden="true" style="display:none;border-top:1px solid var(--border);background:var(--white)">
     <div style="max-width:1140px;margin:0 auto;padding:.6rem 1.5rem;display:flex;flex-direction:column;gap:.3rem">
       <a href="../home page/index.html" style="padding:.55rem .7rem;border-radius:8px;color:var(--text-soft);font-weight:600">الرئيسية</a>
       <a href="../courses/index.html" style="padding:.55rem .7rem;border-radius:8px;color:var(--text-soft);font-weight:600">الدروس</a>
-      <a href="index.html" style="padding:.55rem .7rem;border-radius:8px;color:var(--blue-mid);background:var(--blue-faint);font-weight:600">أبواب العلم</a>
       <a href="../responses/index.html" style="padding:.55rem .7rem;border-radius:8px;color:var(--text-soft);font-weight:600">الردود العلمية</a>
       <a href="../searchs/index.html" style="padding:.55rem .7rem;border-radius:8px;color:var(--text-soft);font-weight:600">البحوث العلمية</a>
+      <a href="index.html" style="padding:.55rem .7rem;border-radius:8px;color:var(--blue-mid);background:var(--blue-faint);font-weight:600">أبواب العلم</a>
     </div>
   </div>
 </header>

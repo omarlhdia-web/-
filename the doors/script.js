@@ -3,6 +3,7 @@ function toggleMenu(btn) {
   if (!m) return;
   var open = m.style.display === 'block';
   m.style.display = open ? 'none' : 'block';
+  m.setAttribute('aria-hidden', String(open));
   if (btn) btn.setAttribute('aria-expanded', String(!open));
 }
 
