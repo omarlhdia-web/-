@@ -49,98 +49,34 @@
 
 <div class="page-hero">
   <h1>الدروس العلمية</h1>
-  <p>دروس محققة، وشيوخ معتمدون، ومراجع موثّقة — كل ما تحتاجه في مكان واحد</p>
+  <p>دروس الشيوخ ومراجع موثّقة — كل ما تحتاجه في مكان واحد</p>
 </div>
 
 <div class="tabs-bar">
   <div class="tabs-inner">
     <button class="tab-btn active" data-tab="shuyukh">
-      📡 دروس الشيوخ <span class="badge">٠</span>
+      قوائم الدروس <span class="badge">٣</span>
     </button>
     <button class="tab-btn" data-tab="marajie">
-      📚 الكتب والمراجع <span class="badge">٠</span>
+      الكتب <span class="badge">٧</span>
     </button>
   </div>
 </div>
 
 <div class="page-body">
+  <p id="course-search-status" class="course-search-status" role="status" hidden></p>
 
   <!-- دروس الشيوخ (مفعل افتراضياً) -->
   <div id="tab-shuyukh" class="tab-content section-block">
     <div class="sec-head">
       <div>
-        <h2>دروس الشيوخ</h2>
-        <p>محتوى مختار ننشره من شيوخ ثقات — لا يمثّل بالضرورة رأي الموقع في كل مسألة</p>
+        <h2>سلاسل قناة معالم التحقيق</h2>
+        <p>شاهد الدروس داخل الموقع، وانتقل بين حلقات كل سلسلة من مشغل يوتيوب.</p>
       </div>
     </div>
 
-    <div class="external-grid">
-      <div class="ext-card">
-        <div class="ext-thumb">
-          📖
-          <span class="ext-source-badge">يوتيوب</span>
-        </div>
-        <div class="ext-body">
-          <div class="ext-sheikh">
-            <div class="ext-sheikh-dot">ش</div>
-            <span class="ext-sheikh-name">الشيخ — سيُضاف الاسم</span>
-          </div>
-          <div class="ext-title">عنوان الدرس — سيُضاف لاحقاً</div>
-          <div class="ext-desc">وصف مختصر للدرس وموضوعه سيُكتب عند إضافة المحتوى الفعلي.</div>
-          <div class="ext-footer">
-            <div class="ext-meta">
-              <span>📚 — جلسة</span>
-              <span>🕐 —</span>
-            </div>
-            <a href="#" class="ext-link">مشاهدة ←</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="ext-card">
-        <div class="ext-thumb" style="background:linear-gradient(135deg,#102a50,#1e6dbf)">
-          🌙
-          <span class="ext-source-badge">تيليغرام</span>
-        </div>
-        <div class="ext-body">
-          <div class="ext-sheikh">
-            <div class="ext-sheikh-dot">ش</div>
-            <span class="ext-sheikh-name">الشيخ — سيُضاف الاسم</span>
-          </div>
-          <div class="ext-title">عنوان الدرس — سيُضاف لاحقاً</div>
-          <div class="ext-desc">وصف مختصر للدرس وموضوعه سيُكتب عند إضافة المحتوى الفعلي.</div>
-          <div class="ext-footer">
-            <div class="ext-meta">
-              <span>📚 — جلسة</span>
-              <span>🕐 —</span>
-            </div>
-            <a href="#" class="ext-link">مشاهدة ←</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="ext-card">
-        <div class="ext-thumb" style="background:linear-gradient(135deg,#071a30,#154070)">
-          ⚖️
-          <span class="ext-source-badge">ساوند كلاود</span>
-        </div>
-        <div class="ext-body">
-          <div class="ext-sheikh">
-            <div class="ext-sheikh-dot">ش</div>
-            <span class="ext-sheikh-name">الشيخ — سيُضاف الاسم</span>
-          </div>
-          <div class="ext-title">عنوان الدرس — سيُضاف لاحقاً</div>
-          <div class="ext-desc">وصف مختصر للدرس وموضوعه سيُكتب عند إضافة المحتوى الفعلي.</div>
-          <div class="ext-footer">
-            <div class="ext-meta">
-              <span>📚 — جلسة</span>
-              <span>🕐 —</span>
-            </div>
-            <a href="#" class="ext-link">استماع ←</a>
-          </div>
-        </div>
-      </div>
-    </div>
+    <div class="playlist-grid" id="channelPlaylists"></div>
+    <p class="channel-link-wrap"><a class="channel-link" href="https://www.youtube.com/@MAALIM_AL_TAHQIQ" target="_blank" rel="noopener noreferrer">زيارة قناة معالم التحقيق على يوتيوب ←</a></p>
   </div>
 
   <!-- الكتب والمراجع -->
@@ -148,114 +84,130 @@
     <div class="sec-head">
       <div>
         <h2>المراجع والكتب</h2>
-        <p>الكتب والمصادر العلمية التي يعتمدها الموقع في دروسه ومقالاته</p>
+        <p>المتون التي تتناولها سلاسل القناة، مع رابط مباشر إلى دروس كل متن.</p>
       </div>
     </div>
 
     <div class="books-grid">
-      <div class="book-card">
-        <div class="book-cover c1">
-          <div class="book-spine"></div>
-          <div class="book-icon">📘</div>
-          <div class="book-title-cover">عنوان الكتاب</div>
-        </div>
-        <div class="book-body">
-          <div class="book-title">عنوان الكتاب — سيُضاف</div>
-          <div class="book-author">المؤلف — سيُضاف</div>
-          <div class="book-tags">
-            <span class="book-tag">العقيدة</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="book-card">
-        <div class="book-cover c2">
-          <div class="book-spine"></div>
-          <div class="book-icon">📗</div>
-          <div class="book-title-cover">عنوان الكتاب</div>
-        </div>
-        <div class="book-body">
-          <div class="book-title">عنوان الكتاب — سيُضاف</div>
-          <div class="book-author">المؤلف — سيُضاف</div>
-          <div class="book-tags">
-            <span class="book-tag">الحديث</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="book-card">
-        <div class="book-cover c3">
-          <div class="book-spine"></div>
-          <div class="book-icon">📙</div>
-          <div class="book-title-cover">عنوان الكتاب</div>
-        </div>
-        <div class="book-body">
-          <div class="book-title">عنوان الكتاب — سيُضاف</div>
-          <div class="book-author">المؤلف — سيُضاف</div>
-          <div class="book-tags">
-            <span class="book-tag">الفقه</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="book-card">
-        <div class="book-cover c4">
-          <div class="book-spine"></div>
-          <div class="book-icon">📕</div>
-          <div class="book-title-cover">عنوان الكتاب</div>
-        </div>
-        <div class="book-body">
-          <div class="book-title">عنوان الكتاب — سيُضاف</div>
-          <div class="book-author">المؤلف — سيُضاف</div>
-          <div class="book-tags">
-            <span class="book-tag">التفسير</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="book-card">
-        <div class="book-cover c5">
-          <div class="book-spine"></div>
-          <div class="book-icon">📒</div>
-          <div class="book-title-cover">عنوان الكتاب</div>
-        </div>
-        <div class="book-body">
-          <div class="book-title">عنوان الكتاب — سيُضاف</div>
-          <div class="book-author">المؤلف — سيُضاف</div>
-          <div class="book-tags">
-            <span class="book-tag">أصول الفقه</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="book-card">
-        <div class="book-cover c6">
-          <div class="book-spine"></div>
-          <div class="book-icon">📓</div>
-          <div class="book-title-cover">عنوان الكتاب</div>
-        </div>
-        <div class="book-body">
-          <div class="book-title">عنوان الكتاب — سيُضاف</div>
-          <div class="book-author">المؤلف — سيُضاف</div>
-          <div class="book-tags">
-            <span class="book-tag">السيرة</span>
-          </div>
-        </div>
-      </div>
+      <article class="book-card">
+        <div class="book-cover book-cover-image"><img src="covers/aqidah-tahawiyya.png" alt="غلاف متن العقيدة الطحاوية للإمام أبي جعفر الطحاوي"></div>
+        <div class="book-body"><div class="book-title">العقيدة الطحاوية</div><div class="book-author">PDF</div><div class="book-tags"><span class="book-tag">العقيدة</span></div><a class="book-file-link" href="books/Noor-Book.com%20%20%D9%85%D8%AA%D9%86%20%D8%A7%D9%84%D8%B9%D9%82%D9%8A%D8%AF%D8%A9%20%D8%A7%D9%84%D8%B7%D8%AD%D8%A7%D9%88%D9%8A%D8%A9%203.pdf" target="_blank" rel="noopener noreferrer">فتح الكتاب </a><a class="book-playlist-link" href="#playlist-tahawiyya" data-open-playlist="tahawiyya">مشاهدة السلسلة ←</a></div>
+      </article>
+      <article class="book-card">
+        <div class="book-cover book-cover-image"><img src="covers/kitab-tawhid.jpg" alt="غلاف كتاب التوحيد الذي هو حق الله على العبيد لمحمد بن عبد الوهاب"></div>
+        <div class="book-body"><div class="book-title">كتاب التوحيد</div><div class="book-author">محمد بن عبد الوهاب · SDOCX</div><div class="book-tags"><span class="book-tag">التوحيد</span></div><a class="book-file-link" href="books/%D9%83%D8%AA%D8%A7%D8%A8%20%D8%A7%D9%84%D8%AA%D9%88%D8%AD%D9%8A%D8%AF%20(%D9%85%D8%AD%D9%85%D8%AF%20%D8%A8%D9%86%20%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D9%88%D9%87%D8%A7%D8%A8)%20(z-librarysk%2C%201l_260414_033822.sdocx" download>تنزيل الكتاب ↓</a><a class="book-playlist-link" href="#playlist-tawhid" data-open-playlist="tawhid">مشاهدة السلسلة ←</a></div>
+      </article>
+      <article class="book-card">
+        <div class="book-cover book-cover-image"><img src="covers/raheeq-al-makhtum.jpg" alt="غلاف كتاب الرحيق المختوم لصفي الرحمن المباركفوري"></div>
+        <div class="book-body"><div class="book-title">الرحيق المختوم</div><div class="book-author">السيرة والشمائل النبوية · SDOCX</div><div class="book-tags"><span class="book-tag">السيرة</span></div><a class="book-file-link" href="books/%E2%80%B9%D8%A7%D9%84%D8%B1%D8%AD%D9%8A%D9%82%20%D8%A7%D9%84%D9%85%D8%AE%D8%AA%D9%88%D9%85%E2%80%BA%20%D8%A7%D9%84%D8%B3%D9%8A%D8%B1%D8%A9%20%D9%88%D8%A7%D9%84%D8%B4%D9%85%D8%A7%D8%A6%D9%84%20%D8%A7%D9%84%D9%86%D8%A8%D9%88%D9%8A%D8%A9_260710_125755.sdocx" download>تنزيل الكتاب ↓</a></div>
+      </article>
+      <article class="book-card">
+        <div class="book-cover book-cover-image"><img src="covers/al-qawl-al-mufid.jpg" alt="غلاف كتاب القول المفيد على كتاب التوحيد لمحمد بن صالح العثيمين"></div>
+        <div class="book-body"><div class="book-title">القول المفيد على كتاب التوحيد · 01</div><div class="book-author">محمد بن صالح العثيمين · PDF</div><div class="book-tags"><span class="book-tag">التوحيد</span></div><a class="book-file-link" href="books/EL-QAWLU-L-MUFID%20%27ALA%20KITABI-T-TEWHID%20%20%2001%20%20%20-%20%20%20Muhammed%20b.%20Salih%20el-%27Usejmin.pdf" target="_blank" rel="noopener noreferrer">فتح الكتاب </a></div>
+      </article>
+      <article class="book-card">
+        <div class="book-cover book-cover-image"><img src="covers/al-aqida-al-wasitiyya.jpg" alt="غلاف العقيدة الواسطية لشيخ الإسلام ابن تيمية"></div>
+        <div class="book-body"><div class="book-title">العقيدة الواسطية</div><div class="book-author">ابن تيمية · SDOCX</div><div class="book-tags"><span class="book-tag">العقيدة</span></div><a class="book-file-link" href="books/%D8%A7%D9%84%D8%B9%D9%82%D9%8A%D8%AF%D8%A9%20%D8%A7%D9%84%D9%88%D8%A7%D8%B3%D8%B7%D9%8A%D8%A9%20%D9%84%D8%B4%D9%8A%D8%AE%20%D8%A7%D9%84%D8%A5%D8%B3%D9%84%D8%A7%D9%85%20%D8%A7%D8%A8%D9%86%20%D8%AA%D9%8A%D9%85%D9%8A%D8%A9%20-%20%D8%AA_%20%D8%A7%D9%84%D8%B3%D9%82%D8%A7_260527_131200.sdocx" download>تنزيل الكتاب ↓</a></div>
+      </article>
+      <article class="book-card">
+        <div class="book-cover book-cover-image"><img src="covers/at-tuhfa-as-saniyya.png" alt="غلاف التحفة السنية بشرح المقدمة الآجرومية لمحمد محيي الدين عبد الحميد"></div>
+        <div class="book-body"><div class="book-title">التحفة السنية بشرح المقدمة الآجرومية</div><div class="book-author">SDOCX</div><div class="book-tags"><span class="book-tag">النحو</span></div><a class="book-file-link" href="books/Noor-Bookcom%20%20%D8%A7%D9%84%D8%AA%D8%AD%D9%81%D8%A9%20%D8%A7%D9%84%D8%B3%D9%86%D9%8A%D8%A9%20%D8%A8%D8%B4%D8%B1%D8%AD%20%D8%A7%D9%84%D9%85%D9%82%D8%AF%D9%85%D8%A9%20%D8%A7%D9%84%D8%A2%D8%AC%D8%B1%D9%88%D9%85%D9%8A_260716_231930.sdocx" download>تنزيل الكتاب ↓</a></div>
+      </article>
+      <article class="book-card">
+        <div class="book-cover book-cover-image"><img src="covers/taaleeq-tahawiyya.jpg" alt="غلاف كتاب التعليق على مواضع من شرح العقيدة الطحاوية"></div>
+        <div class="book-body"><div class="book-title">التعليق على مواضع من شرح العقيدة الطحاوية</div><div class="book-author">محمد بن صالح العثيمين · PDF</div><div class="book-tags"><span class="book-tag">العقيدة</span></div><a class="book-file-link" href="books/a1635n.pdf" target="_blank" rel="noopener noreferrer">فتح الكتاب </a></div>
+      </article>
     </div>
   </div>
 
 </div><footer>
   <div class="footer-inner">
-    <div class="footer-links">
-      <a href="#">من نحن</a>
-      <a href="#">سياسة الخصوصية</a>
-      <a href="#">اتصل بنا</a>
-    </div>
+    <div class="footer-links"><a href="../home page/index.html">الرئيسية</a><a href="../courses/index.html">الدروس والكتب</a><a href="../the doors/index.html">أبواب العلم</a></div>
     <div class="copyright">&copy; 2026 معالم التحقيق — جميع الحقوق محفوظة</div>
   </div>
 </footer>
 
 <script src="script.js"></script>
+<script>
+  const lessonPlaylists = [
+    { id: "tahawiyya", title: "شرح العقيدة الطحاوية", videos: [
+      ["شرح العقيدة الطحاوية الحلقة: 1", "axHvHVxcYfE"], ["شرح العقيدة الطحاوية الحلقة: 2", "yC-3hrWVcoc"], ["شرح العقيدة الطحاوية الحلقة: 3", "GBerduFYjM4"], ["شرح العقيدة الطحاوية الحلقة: 4", "MtjpX_6nbkA"], ["شرح العقيدة الطحاوية الحلقة: 5", "1HpE9Zhr9Zw"]
+    ]},
+    { id: "tawhid", title: "شرح مختصر كتاب التوحيد", videos: [
+      ["شرح مختصر كتاب التوحيد الحلقة: 1", "9cCNL6WDzow"], ["شرح مختصر كتاب التوحيد الحلقة: 2", "7ucdXmB1TbA"], ["شرح مختصر كتاب التوحيد الحلقة: 3", "m5lN365TGeA"]
+    ]},
+    { id: "matalib", title: "المطالب الإلهية بين النظريات الفلسفية والأدلة الكلامية", videos: [
+      ["المطالب الإلهية بين النظريات الفلسفية والأدلة الكلامية الدرس: 1", "gwevMFb6heI"], ["المطالب الإلهية بين النظريات الفلسفية والأدلة الكلامية الحلقة: 2", "xyDkp16bB30"], ["المطالب الإلهية بين النظريات الفلسفية والأدلة الكلامية الحلقة: 3", "6h0Bv0D1Qu4"], ["المطالب الإلهية بين النظريات الفلسفية والأدلة الكلامية الحلقة: 4", "QENe-Cs4X3M"], ["المطالب الإلهية بين النظريات الفلسفية والأدلة الكلامية الحلقة: 5", "GfzjwlARpdI"], ["المطالب الإلهية بين النظريات الفلسفية والأدلة الكلامية الحلقة: 6", "INgB3QXwo_s"]
+    ]}
+  ];
+
+  const playlistsRoot = document.getElementById("channelPlaylists");
+  playlistsRoot.innerHTML = lessonPlaylists.map(({id, title, videos}) => {
+    const ids = videos.slice(1).map(([, videoId]) => videoId).join(",");
+    const playerUrl = `https://www.youtube-nocookie.com/embed/${videos[0][1]}?playlist=${ids}&rel=0`;
+    return `<details class="playlist-card" id="playlist-${id}">
+      <summary class="playlist-summary"><span class="playlist-play-icon">▶</span><span class="playlist-summary-text"><strong>${title}</strong><small>${videos.length} حلقات · اضغط لفتح القائمة</small></span><span class="playlist-summary-action">عرض القائمة ＋</span></summary>
+      <div class="playlist-content"><div class="playlist-heading"><div><h3>${title}</h3><p>${videos.length} حلقات من قناة معالم التحقيق</p></div><a href="https://www.youtube.com/watch_videos?video_ids=${videos.map(([, videoId]) => videoId).join(",")}" target="_blank" rel="noopener noreferrer">فتح القائمة على يوتيوب </a></div>
+      <div class="playlist-player"><iframe src="${playerUrl}" title="قائمة ${title}" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+      <ol class="playlist-episodes">${videos.map(([videoTitle, videoId], index) => `<li><button class="episode-button${index === 0 ? " is-current" : ""}" type="button" data-playlist="${id}" data-index="${index}" aria-pressed="${index === 0}"><span>${index + 1}</span>${videoTitle}</button></li>`).join("")}</ol></div>
+    </details>`;
+  }).join("");
+
+  document.querySelectorAll("[data-open-playlist]").forEach(link => link.addEventListener("click", event => {
+    event.preventDefault();
+    document.querySelector('[data-tab="shuyukh"]').click();
+    const target = document.getElementById(`playlist-${link.dataset.openPlaylist}`);
+    target.open = true;
+    requestAnimationFrame(() => target.scrollIntoView({behavior:"smooth"}));
+  }));
+
+  document.querySelectorAll(".episode-button").forEach(button => button.addEventListener("click", () => {
+    const group = lessonPlaylists.find(playlist => playlist.id === button.dataset.playlist);
+    const index = Number(button.dataset.index);
+    const videoId = group.videos[index][1];
+    const queue = group.videos.slice(index + 1).concat(group.videos.slice(0, index)).map(([, id]) => id).join(",");
+    const iframe = document.querySelector(`#playlist-${group.id} iframe`);
+    iframe.src = `https://www.youtube-nocookie.com/embed/${videoId}?playlist=${queue}&rel=0`;
+    document.querySelectorAll(`#playlist-${group.id} .episode-button`).forEach(item => {
+      const selected = item === button;
+      item.classList.toggle("is-current", selected);
+      item.setAttribute("aria-pressed", String(selected));
+    });
+  }));
+
+  const searchParams = new URLSearchParams(window.location.search);
+  const searchQuery = searchParams.get("q");
+  const searchType = searchParams.get("type");
+  if (searchQuery) {
+    const normalizeSearch = value => value.toLocaleLowerCase("ar").normalize("NFD")
+      .replace(/[\u064B-\u065F\u0670\u0640]/g, "").replace(/[أإآ]/g, "ا").replace(/ى/g, "ي");
+    const normalizedQuery = normalizeSearch(searchQuery.trim());
+    const playlists = [...document.querySelectorAll(".playlist-card")];
+    const books = [...document.querySelectorAll(".book-card")];
+    const matches = card => normalizeSearch(card.textContent).includes(normalizedQuery);
+    playlists.forEach(card => card.hidden = searchType === "book" || !matches(card));
+    books.forEach(card => card.hidden = searchType === "lesson" || !matches(card));
+
+    const activeTab = searchType === "book" ? "marajie" : "shuyukh";
+    document.querySelectorAll(".tab-content").forEach(content => content.style.display = "none");
+    document.getElementById(`tab-${activeTab}`).style.display = "block";
+    document.querySelectorAll(".tab-btn").forEach(button => {
+      button.classList.toggle("active", button.dataset.tab === activeTab);
+    });
+
+    const visibleMatches = (searchType === "book" ? books : playlists).filter(card => !card.hidden);
+    const status = document.getElementById("course-search-status");
+    if (status) {
+      status.textContent = visibleMatches.length
+        ? `نتائج البحث عن «${searchQuery}»: ${visibleMatches.length}`
+        : `لا توجد نتائج مطابقة لـ «${searchQuery}».`;
+      status.hidden = false;
+    }
+    if (visibleMatches[0]) {
+      if (searchType === "lesson") visibleMatches[0].open = true;
+      requestAnimationFrame(() => visibleMatches[0].scrollIntoView({ block: "center" }));
+    }
+  }
+</script>
 </body>
 </html>

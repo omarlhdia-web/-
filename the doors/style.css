@@ -41,7 +41,7 @@ header{
   box-shadow:var(--shadow-sm);
 }
 .nav-wrap{
-  max-width:1140px;margin:0 auto;
+  width:100%;max-width:none;margin:0;
   padding:.9rem 1.5rem;
   display:flex;align-items:center;
   justify-content:space-between;gap:1rem;

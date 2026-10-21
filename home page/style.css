@@ -8,6 +8,7 @@
 
         /* Reset & base */
         *{box-sizing:border-box}
+        [hidden]{display:none!important}
         html,body{height:100%;max-width:100%;overflow-x:hidden}
         body{
             margin:0;
@@ -46,9 +47,10 @@
             z-index:100;
         }
         .container{
-            max-width:1100px;
-            margin:0 auto;
-            padding:1rem;
+            width:100%;
+            max-width:none;
+            margin:0;
+            padding:1rem 1.5rem;
             display:flex;
             gap:var(--gap);
             align-items:center;
@@ -122,26 +124,42 @@
             align-items:center;
         }
         .hero-card{
+            position:relative;
+            overflow:hidden;
             padding:2rem;
-            height: 300px;
+            height:auto;
+            min-height:0;
+            aspect-ratio:16 / 9;
             border-radius:var(--radius);
             background:linear-gradient(180deg, rgba(30,109,191,.06), rgba(10,35,66,.02));
             box-shadow: 0 6px 18px rgba(10,35,66,.04);
             background-image: url(../homeimages/onee.jfif);
             background-size: cover;
+            background-position:center 38%;
             display: flex;
             flex-direction: column;
             align-items: flex-start;
             justify-content: flex-end;
-            
         }
+        .hero-card > *{position:relative;z-index:1}
+        .visually-hidden{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+        .hero-card .stats{width:100%;gap:.55rem}
+        .hero-card .stat{min-width:0;padding:.55rem .75rem;flex:1 1 110px}
+        .hero-card .stat .label{white-space:nowrap}
+        .title-courses{max-width:1100px;margin:0 auto;font-size:clamp(2rem,4vw,3rem);line-height:1.35}
+        #lessons{scroll-margin-top:100px}
+        .lesson:hover{border-color:rgba(30,109,191,.35)}
+        .library-link:hover{text-decoration:underline}
         @media (max-width:900px){
            
             .hero-card{
-                height:320px;
+                aspect-ratio:auto;
+                min-height:390px;
+                height:auto;
                 background-image: url(../homeimages/mobile.jfif);
                 background-size: cover;
-                background-position: right;
+                background-position:center 35%;
+                background-color:var(--white);
             }
         }
 
@@ -218,6 +236,12 @@
             box-shadow:0 0 0 2px rgba(30,109,191,.1);
             
         }
+        .search-status{margin:.4rem 0 0;color:var(--blue-dark);font-size:.9rem}
+        .search-results{width:100%;max-height:280px;overflow:auto;padding:.35rem;background:var(--white);border:1px solid rgba(10,35,66,.12);border-radius:10px;box-shadow:0 8px 20px rgba(10,35,66,.08)}
+        .search-result{display:flex;align-items:center;justify-content:space-between;gap:.75rem;padding:.6rem .7rem;border-radius:7px;color:var(--blue-dark)}
+        .search-result:hover,.search-result:focus-visible{background:rgba(30,109,191,.08)}
+        .search-result-title{font-weight:700}
+        .search-result-type{flex:none;color:rgba(10,35,66,.58);font-size:.82rem}
         .card .thumb{
             width:60px;height:60px;border-radius:10px;
             
@@ -238,12 +262,14 @@
         }
         .lesson{
             border-radius:14px;overflow:hidden;background:linear-gradient(180deg, rgba(30,109,191,.06), rgba(10,35,66,.02));
+            display:block;color:inherit;text-decoration:none;
             transition:transform .18s ease, box-shadow .18s ease;cursor:pointer;border:1px solid rgba(10,35,66,.04);
         }
         .lesson:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(10,35,66,.08)}
         .lesson .img{
-            height:150px;background-size:cover;background-position:center;
+            display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;
         }
+        .lesson:focus-visible{outline:3px solid rgba(30,109,191,.55);outline-offset:3px}
         .lesson .info{padding:1rem}
         .lesson h4{margin:0 0 .4rem;font-family:"Amiri", serif}
         .lesson p{margin:0;color:rgba(10,35,66,.65);font-size:.95rem}
@@ -260,6 +286,8 @@
         .articles{
             max-width:1100px;margin:1.5rem auto;padding:1rem;border-radius:12px;background:rgba(30,109,191,.03);border:1px solid rgba(30,109,191,.04)
         }
+        .articles p{margin:.2rem 0 .8rem;color:rgba(10,35,66,.72)}
+        .library-link{font-weight:700;color:var(--blue-mid)}
         .article-item{display:flex;justify-content:space-between;gap:.75rem;padding:.6rem 0;border-bottom:1px dashed rgba(10,35,66,.04)}
         .article-item:last-child{border-bottom:0}
         .article-item a{font-weight:700;color:var(--blue-dark)}
@@ -287,7 +315,7 @@
             .lessons{grid-template-columns:1fr}
             .container{padding:.6rem}
             main{padding-inline:.75rem}
-            .hero-card{padding:1rem;min-height:320px;height:auto}
+            .hero-card{padding:1rem;aspect-ratio:auto;min-height:320px;height:auto}
             .title-courses{font-size:clamp(1.8rem, 12vw, 2.4rem)}
             .stats{display:grid;grid-template-columns:1fr 1fr;width:100%}
             .stat{min-width:0}
